@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shows</title>
+    <style>
+        .tb { border-collapse: collapse; }
+        .tb th, .tb td { padding: 5px; border: solid 1px #777; }
+        .tb th { background-color: lightblue; }
+    </style>
+</head>
+<body>
+    <h1>Type: <span data-th-text="${type}"></span></h1>
+
+    <table class="tb">
+        <tr style="font-weight: bold;">
+            <td>Name</td>
+            <td>Ave Rating</td>
+        </tr>
+        <tr data-th-each="show : ${shows}">
+            <td><a data-th-href="@{/{id}(id=${show.id})}"><span data-th-text="${show.name}"></span></a></td>
+            <td data-th-text="${show.rating}"></td>
+        </tr>
+    </table>
+
+</body>
+</html>
